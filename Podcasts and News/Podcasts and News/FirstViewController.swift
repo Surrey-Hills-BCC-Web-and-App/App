@@ -20,6 +20,9 @@ class FirstViewController: UIViewController {
             self.webView.load(urlRequest)
         }
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
 
 }
