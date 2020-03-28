@@ -17,6 +17,12 @@
 		552AC6A824246D7D00D84F0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 552AC6A624246D7D00D84F0D /* LaunchScreen.storyboard */; };
 		552AC6B324246D7E00D84F0D /* Podcasts_and_NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552AC6B224246D7E00D84F0D /* Podcasts_and_NewsTests.swift */; };
 		552AC6BE24246D7E00D84F0D /* Podcasts_and_NewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552AC6BD24246D7E00D84F0D /* Podcasts_and_NewsUITests.swift */; };
+		552C7FB924298B780090E275 /* HomeModelP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552C7FB824298B780090E275 /* HomeModelP.swift */; };
+		552C7FBB24298BA20090E275 /* PodcastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552C7FBA24298BA20090E275 /* PodcastModel.swift */; };
+		559482F6242AF0EB00A8216D /* NewsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559482F5242AF0EB00A8216D /* NewsLoader.swift */; };
+		55BE9504242AD39100BAB02F /* HomeModelN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE9503242AD39100BAB02F /* HomeModelN.swift */; };
+		55BE9508242ADB2F00BAB02F /* WhatsOnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE9507242ADB2F00BAB02F /* WhatsOnModel.swift */; };
+		55C37D892429B23B00A277B8 /* PodcastPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C37D882429B23B00A277B8 /* PodcastPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,12 @@
 		552AC6B924246D7E00D84F0D /* Podcasts and NewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Podcasts and NewsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		552AC6BD24246D7E00D84F0D /* Podcasts_and_NewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcasts_and_NewsUITests.swift; sourceTree = "<group>"; };
 		552AC6BF24246D7E00D84F0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		552C7FB824298B780090E275 /* HomeModelP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModelP.swift; sourceTree = "<group>"; };
+		552C7FBA24298BA20090E275 /* PodcastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastModel.swift; sourceTree = SOURCE_ROOT; };
+		559482F5242AF0EB00A8216D /* NewsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLoader.swift; sourceTree = SOURCE_ROOT; };
+		55BE9503242AD39100BAB02F /* HomeModelN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModelN.swift; sourceTree = "<group>"; };
+		55BE9507242ADB2F00BAB02F /* WhatsOnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsOnModel.swift; sourceTree = "<group>"; };
+		55C37D882429B23B00A277B8 /* PodcastPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +115,16 @@
 		552AC69524246D7D00D84F0D /* Podcasts and News */ = {
 			isa = PBXGroup;
 			children = (
+				552C7FBA24298BA20090E275 /* PodcastModel.swift */,
+				552C7FB824298B780090E275 /* HomeModelP.swift */,
+				55BE9507242ADB2F00BAB02F /* WhatsOnModel.swift */,
+				55BE9503242AD39100BAB02F /* HomeModelN.swift */,
 				552AC69624246D7D00D84F0D /* AppDelegate.swift */,
 				552AC69824246D7D00D84F0D /* SceneDelegate.swift */,
 				552AC69A24246D7D00D84F0D /* FirstViewController.swift */,
+				55C37D882429B23B00A277B8 /* PodcastPlayer.swift */,
 				552AC69C24246D7D00D84F0D /* SecondViewController.swift */,
+				559482F5242AF0EB00A8216D /* NewsLoader.swift */,
 				552AC69E24246D7D00D84F0D /* Main.storyboard */,
 				552AC6A424246D7D00D84F0D /* Assets.xcassets */,
 				552AC6A624246D7D00D84F0D /* LaunchScreen.storyboard */,
@@ -265,11 +283,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552C7FBB24298BA20090E275 /* PodcastModel.swift in Sources */,
 				552AC69D24246D7D00D84F0D /* SecondViewController.swift in Sources */,
+				55C37D892429B23B00A277B8 /* PodcastPlayer.swift in Sources */,
+				55BE9508242ADB2F00BAB02F /* WhatsOnModel.swift in Sources */,
 				552AC69B24246D7D00D84F0D /* FirstViewController.swift in Sources */,
+				552C7FB924298B780090E275 /* HomeModelP.swift in Sources */,
 				552AC69724246D7D00D84F0D /* AppDelegate.swift in Sources */,
 				552AC69924246D7D00D84F0D /* SceneDelegate.swift in Sources */,
 				552AC6A324246D7D00D84F0D /* Podcasts_and_News.xcdatamodeld in Sources */,
+				559482F6242AF0EB00A8216D /* NewsLoader.swift in Sources */,
+				55BE9504242AD39100BAB02F /* HomeModelN.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
