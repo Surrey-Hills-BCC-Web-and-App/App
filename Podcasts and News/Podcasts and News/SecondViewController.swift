@@ -34,6 +34,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         homeModelN.delegate = self
         homeModelN.downloadItems()
     }
+    func itemsDownloaded(items: NSArray) {
         feedItems = items
         self.listTableView.reloadData()
     }
