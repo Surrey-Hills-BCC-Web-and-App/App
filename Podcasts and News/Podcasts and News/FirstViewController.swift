@@ -16,6 +16,7 @@ class PodcastViewCell: UITableViewCell {
     @IBOutlet weak var podcastLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var Thumbnail: UIImageView!
     
     override func awakeFromNib()
     {
@@ -51,10 +52,14 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cellIdentifier = "PodcastTableViewCell"
         let cell: PodcastViewCell = self.listTableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! PodcastViewCell
         let item: PodcastModel = feedItems[indexPath.row] as! PodcastModel
+        let imageUrlString = item.thumbnail
+        let imageUrl = URL(string: imageUrlString!)
+        let imageData = try! Data(contentsOf: imageUrl!)
         
         cell.podcastLabel?.text = item.title
         cell.userLabel?.text = item.user
         cell.timeLabel?.text = item.uploaded_on
+        cell.Thumbnail?.image = UIImage(data: imageData)
         
         return cell
     }

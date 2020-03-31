@@ -10,9 +10,12 @@ import UIKit
 
 class NewsViewCell: UITableViewCell {
     
+    
     @IBOutlet weak var newsLabel: UILabel!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var Thumbnail: UIImageView!
+    
     override func awakeFromNib()
     {
         super.awakeFromNib()
@@ -45,10 +48,14 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         let cellIdentifier = "NewsTableViewCell"
         let cell: NewsViewCell = self.listTableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! NewsViewCell
         let item: WhatsOnModel = feedItems[indexPath.row] as! WhatsOnModel
+        let imageUrlString = item.thumbnail
+        let imageUrl = URL(string: imageUrlString!)
+        let imageData = try! Data(contentsOf: imageUrl!)
         
         cell.newsLabel?.text = item.title
         cell.userLabel?.text = item.user
         cell.timeLabel?.text = item.uploaded_on
+        cell.Thumbnail?.image = UIImage(data: imageData)
         
         return cell
     }
@@ -60,13 +67,17 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showView" {
             if let indexPath = self.listTableView.indexPathForSelectedRow {
-                let newsItem: WhatsOnModel = feedItems[indexPath.row] as! WhatsOnModel
-                let url = URL(string: newsItem.name!)
+                let item: WhatsOnModel = feedItems[indexPath.row] as! WhatsOnModel
+                let url = URL(string: item.name!)
+                let imageUrlString = item.thumbnail
+                let imageUrl = URL(string: imageUrlString!)
                 do {
-                    self.navigationItem.backBarButtonItem = UIBarButtonItem(title: newsItem.title, style: .plain, target: nil, action: nil)
+                    self.navigationItem.backBarButtonItem = UIBarButtonItem(title: item.title, style: .plain, target: nil, action: nil)
                     let vc = segue.destination as! NewsLoader
                     let data = try String.init(contentsOf: url!)
                     vc.news = data as String
+                    let imageData = try! Data(contentsOf: imageUrl!)
+                    vc.imageData = UIImage(data: imageData)
                 }
                 catch let error as NSError {
                 print("An error took place: \(error)")

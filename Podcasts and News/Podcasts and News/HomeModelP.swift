@@ -15,7 +15,7 @@ protocol HomeModelPProtocal: class {
 class HomeModelP: NSObject, URLSessionDataDelegate {
     weak var delegate: HomeModelPProtocal?
     var data = Data()
-    let urlPath: String = "http://10.0.0.86/AppService/ServiceP.php"
+    let urlPath: String = "http://124.184.122.214/AppService/ServiceP.php"
     
     func downloadItems() {
         
@@ -51,15 +51,18 @@ class HomeModelP: NSObject, URLSessionDataDelegate {
             
             let podcast = PodcastModel()
             let name1 = jsonElement["name"] as! String
-            if let name = "http://10.0.0.86/Podcasts/\(name1)" as? String,
+            let thumb1 = jsonElement["thumbnail"] as! String
+            if let name = "http://124.184.122.214/Podcasts/\(name1)" as? String,
                 let title = jsonElement["title"] as? String,
                 let uploaded_on = jsonElement["uploaded_on"] as? String,
-                let user = jsonElement["user"] as? String
+                let user = jsonElement["user"] as? String,
+                let thumbnail = "http://124.184.122.214/ThumbnailWO/\(thumb1)" as? String
             {
                 podcast.name = name
                 podcast.title = title
                 podcast.uploaded_on = uploaded_on
                 podcast.user = user
+                podcast.thumbnail = thumbnail
             }
             
             podcasts.add(podcast)

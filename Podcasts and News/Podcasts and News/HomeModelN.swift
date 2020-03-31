@@ -15,7 +15,7 @@ protocol HomeModelNProtocal: class {
 class HomeModelN: NSObject, URLSessionDataDelegate {
     weak var delegate: HomeModelNProtocal?
     var data = Data()
-    let urlPath: String = "http://10.0.0.86/AppService/ServiceN.php"
+    let urlPath: String = "http://124.184.122.214/AppService/ServiceN.php"
     
     func downloadItems() {
         
@@ -51,17 +51,18 @@ class HomeModelN: NSObject, URLSessionDataDelegate {
             
             let new = WhatsOnModel()
             let name1 = jsonElement["name"] as! String
-            if let name = "http://10.0.0.86/News/\(name1)" as? String,
+            let thumb1 = jsonElement["thumbnail"] as! String
+            if let name = "http://124.184.122.214/News/\(name1)" as? String,
                 let title = jsonElement["title"] as? String,
                 let uploaded_on = jsonElement["uploaded_on"] as? String,
-                let user = jsonElement["user"] as? String
+                let user = jsonElement["user"] as? String,
+                let thumbnail = "http://124.184.122.214/ThumbnailWO/\(thumb1)" as? String
             {
-                
-                
                 new.name = name
                 new.title = title
                 new.uploaded_on = uploaded_on
                 new.user = user
+                new.thumbnail = thumbnail
             }
             
             news.add(new)
